@@ -20,7 +20,6 @@ void setup() {
     println("args == null");
   }
 
-
   switch(args[0]) {
   case "A":
     cam = new IPCapture(this, "http://" + "192.168.1."+ camB.ip + ":" + camB.port + "/?action=stream", "", "");
