@@ -3,16 +3,17 @@ import ipcapture.*;
 IPCapture cam;
 
 // init cameras
-Camera camHead1 = new Camera("head1", 124, 8080);
-Camera camHead2 = new Camera("head2", 125, 9090);
-Camera camTop   = new Camera("top", 126, 7070);
+Camera camA = new Camera("CamA", 124, 8080);
+Camera camB = new Camera("CamB", 125, 9090);
+Camera camC = new Camera("CamC", 126, 7070); //top
 
 void setup() {
   size(800, 480);
   //fullScreen();
 
   // start camera stream
-  cam = new IPCapture(this, "http://" + "192.168.1."+ camHead1.ip + ":" + camHead1.port + "/?action=stream", "", "");
+  cam = new IPCapture(this, "http://" + "192.168.1."+ camA.ip + ":" + camA.port + "/?action=stream", "", "");
+  //cam = new IPCapture(this, "http://" + "192.168.1."+ camB.ip + ":" + camB.port + "/?action=stream", "", "");
   cam.start();
 }
 
@@ -49,12 +50,13 @@ void keyReleased() {
   if (key == 't') {
     println("key t pressed");
     cam.stop();
-    cam = new IPCapture(this, "http://" + "192.168.1."+ camTop.ip + ":" + camTop.port + "/?action=stream", "", "");
+    cam = new IPCapture(this, "http://" + "192.168.1."+ camC.ip + ":" + camC.port + "/?action=stream", "", "");
     cam.start();
   } else if (key == 'h') {
     println("key h pressed");
     cam.stop();
-    cam = new IPCapture(this, "http://" + "192.168.1."+ camHead1.ip + ":" + camHead1.port + "/?action=stream", "", "");
+    cam = new IPCapture(this, "http://" + "192.168.1."+ camA.ip + ":" + camA.port + "/?action=stream", "", "");
+    //cam = new IPCapture(this, "http://" + "192.168.1."+ camB.ip + ":" + camB.port + "/?action=stream", "", "");
     cam.start();
   }
-}  
+a}  
