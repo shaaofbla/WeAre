@@ -8,8 +8,8 @@ Camera camB = new Camera("CamB", 125, 9090);
 Camera camC = new Camera("CamC", 126, 7070); //top
 
 void setup() {
-  size(800, 480);
-  //fullScreen();
+  //size(800, 480);
+  fullScreen();
 
   if (args != null) {
     println(args.length);
